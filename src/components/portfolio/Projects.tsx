@@ -31,8 +31,8 @@ const projects = [
     title: "Rust Detection Mobile App",
     Icon: Smartphone,
     accent: "var(--amber)",
-    status: "Production",
-    github: "https://github.com/Rakeshcrv",
+    status: "Completed",
+    github: "https://github.com/Rakeshcrv/rust-detection-api/rust-detection-api",
     demo: null,
     description:
       "AI-powered Flutter application that detects rust severity in real time using YOLO and TensorFlow models with a Flask API backend deployed on AWS EC2.",
@@ -48,7 +48,7 @@ const projects = [
     Icon: GitMerge,
     accent: "var(--violet)",
     status: "Completed",
-    github: "https://github.com/Rakeshcrv",
+    github: "https://github.com/Rakeshcrv/garbage-management-system",
     demo: null,
     description:
       "Designed and implemented an automated CI/CD pipeline for a containerized three-tier application using Jenkins, Docker, Prometheus, and Grafana.",
