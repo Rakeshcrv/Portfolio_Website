@@ -32,7 +32,7 @@ const projects = [
     Icon: Smartphone,
     accent: "var(--amber)",
     status: "Completed",
-    github: "https://github.com/Rakeshcrv/rust-detection-api/rust-detection-api",
+    github: "https://github.com/Rakeshcrv/rust-detection-api",
     demo: null,
     description:
       "AI-powered Flutter application that detects rust severity in real time using YOLO and TensorFlow models with a Flask API backend deployed on AWS EC2.",
