@@ -24,8 +24,7 @@ const items = [
     title: "Bachelor of Computer Applications (BCA)",
     company: "St. Joseph's First Grade College, Mysore",
     subtitle: "Computer Applications",
-    period: "2023 - 2026",
-    score: "CGPA: 8.9 / 10",
+    period: "CGPA: 8.9 / 10",
     color: "var(--violet)",
     points: [
       "Built a strong foundation in operating systems, networking, databases, and software engineering.",
