@@ -8,7 +8,7 @@ const items = [
     title: "Junior DevOps Engineer",
     company: "AITSP",
     subtitle: "Production Infrastructure · AWS",
-    period: "2026 – Present",
+    period: "June 2026 – Present",
     color: "var(--cyan)",
     points: [
       "Managed AWS infrastructure including EC2, VPC, IAM, Route 53, and RDS.",
@@ -24,7 +24,8 @@ const items = [
     title: "Bachelor of Computer Applications (BCA)",
     company: "St. Joseph's First Grade College, Mysore",
     subtitle: "Computer Applications",
-    period: "CGPA: 8.9 / 10",
+    period: "2023 - 2026",
+    score: "CGPA: 8.9 / 10",
     color: "var(--violet)",
     points: [
       "Built a strong foundation in operating systems, networking, databases, and software engineering.",
