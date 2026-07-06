@@ -1,0 +1,51 @@
+name: 🚀 Deploy Portfolio to AWS EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to EC2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script_stop: true
+          script: |
+            set -e
+
+            echo "====================================="
+            echo "Starting Portfolio Deployment"
+            echo "====================================="
+
+            cd ~/Portfolio_Website
+
+            echo "Pulling latest code..."
+            git pull origin main
+
+            echo "Installing dependencies..."
+            npm install
+
+            echo "Building application..."
+            npm run build
+
+            echo "Restarting portfolio service..."
+            sudo systemctl restart portfolio
+
+            echo "Waiting for application..."
+            sleep 5
+
+            echo "Checking service status..."
+            sudo systemctl is-active --quiet portfolio
+
+            echo "Deployment completed successfully!"
