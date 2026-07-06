@@ -27,7 +27,7 @@ const items = [
     period: "CGPA: 8.9 / 10",
     color: "var(--violet)",
     points: [
-      "Built a strong foundation in operating systems, networking, databases, and software engineering.",
+      "Built a strong foundation in operating systems, networking, coding, databases, and software engineering.",
       "Completed multiple cloud, DevOps, automation, and AI-based projects.",
       "Focused on AWS, Linux, CI/CD, monitoring, and Site Reliability Engineering practices.",
     ],
