@@ -14,36 +14,56 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Deploy via SSH
+      - name: Deploy to EC2 via SSH
         uses: appleboy/ssh-action@v1.2.2
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
-          script_stop: true
+          timeout: 60s
+          command_timeout: 30m
+
           script: |
             set -e
 
-            echo "====================================="
-            echo "Starting Portfolio Deployment"
-            echo "====================================="
+            echo "========================================"
+            echo "🚀 Starting Portfolio Deployment"
+            echo "========================================"
 
-            echo "Pulling latest code..."
+            cd ~/Portfolio_Website
+
+            echo ""
+            echo "📂 Current Directory:"
+            pwd
+
+            echo ""
+            echo "📥 Pulling latest code..."
             git pull origin main
 
-            echo "Installing dependencies..."
+            echo ""
+            echo "📦 Installing dependencies..."
             npm install
 
-            echo "Building application..."
+            echo ""
+            echo "🏗 Building application..."
             npm run build
 
-            echo "Restarting portfolio service..."
+            echo ""
+            echo "🔄 Reloading systemd..."
+            sudo systemctl daemon-reload
+
+            echo ""
+            echo "🚀 Restarting portfolio service..."
             sudo systemctl restart portfolio
 
-            echo "Waiting for application..."
+            echo ""
+            echo "⏳ Waiting for service..."
             sleep 5
 
-            echo "Checking service status..."
-            sudo systemctl is-active --quiet portfolio
+            echo ""
+            echo "✅ Checking service status..."
+            sudo systemctl is-active portfolio
 
-            echo "Deployment completed successfully!"
+            echo ""
+            echo "🎉 Deployment Successful!"
+            echo "Website: https://rakeshsirvi.site"
