@@ -28,8 +28,6 @@ jobs:
             echo "Starting Portfolio Deployment"
             echo "====================================="
 
-            cd ~/Portfolio_Website
-
             echo "Pulling latest code..."
             git pull origin main
 
