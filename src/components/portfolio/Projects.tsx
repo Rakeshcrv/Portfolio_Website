@@ -17,7 +17,7 @@ const projects = [
     accent: "var(--cyan)",
     status: "Production",
     demo: "https://www.techsalesaxis.com",
-    github: null,
+    github: https://github.com/tnbit01-wq/TechSalesAxis.git,
     description:
       "Production application on AWS with Next.js frontend, FastAPI backend, and PostgreSQL. Managed EC2 operations, systemd services, deployments, rollbacks, and health monitoring.",
     tags: ["AWS", "Linux", "Systemd", "Next.js", "FastAPI", "PostgreSQL"],
