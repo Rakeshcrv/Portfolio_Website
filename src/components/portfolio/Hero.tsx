@@ -101,7 +101,7 @@ export function Hero() {
           className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg"
         >
           Hands-on experience with AWS, Linux, Docker, CI/CD, Monitoring, and Production Operations. 
-          Passionate about building reliable cloud infrastructure, automating deployments, and improving system reliability.
+          Passionate about building reliable cloud infrastructure, automating deployments, and improving system reliability and performence.
         </motion.p>
 
         <motion.div
