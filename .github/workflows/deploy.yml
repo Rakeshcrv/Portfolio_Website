@@ -27,43 +27,43 @@ jobs:
             set -e
 
             echo "========================================"
-            echo "🚀 Starting Portfolio Deployment"
+            echo " Starting Portfolio Deployment"
             echo "========================================"
 
             cd ~/Portfolio_Website
 
             echo ""
-            echo "📂 Current Directory:"
+            echo " Current Directory:"
             pwd
 
             echo ""
-            echo "📥 Pulling latest code..."
+            echo " Pulling latest code..."
             git pull origin main
 
             echo ""
-            echo "📦 Installing dependencies..."
+            echo " Installing dependencies..."
             npm install
 
             echo ""
-            echo "🏗 Building application..."
+            echo " Building application..."
             npm run build
 
             echo ""
-            echo "🔄 Reloading systemd..."
+            echo " Reloading systemd..."
             sudo systemctl daemon-reload
 
             echo ""
-            echo "🚀 Restarting portfolio service..."
+            echo " Restarting portfolio service..."
             sudo systemctl restart portfolio
 
             echo ""
-            echo "⏳ Waiting for service..."
+            echo " Waiting for service..."
             sleep 5
 
             echo ""
-            echo "✅ Checking service status..."
+            echo " Checking service status..."
             sudo systemctl is-active portfolio
 
             echo ""
-            echo "🎉 Deployment Successful!"
+            echo " Deployment Successful!"
             echo "Website: https://rakeshsirvi.site"
