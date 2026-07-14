@@ -70,7 +70,7 @@ export function Contact() {
     {
       Icon: Linkedin,
       label: "LinkedIn",
-      value: "Rakesh Sirvi",
+      value: "Rakesh Sirvi N",
       href: "https://www.linkedin.com/in/rakesh-sirvi-n-24232a3b3",
     },
     {
