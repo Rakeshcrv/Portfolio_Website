@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Section } from "./Section";
+import { Cpu } from "lucide-react";
 import {
   ArrowUpRight,
   Cloud,
@@ -62,10 +63,10 @@ const projects = [
   {
     title: "FlowOps AI",
     Icon: Cpu,
-    accent: "var(--cyan)",
+    accent: "#06b6d4",
     status: "Active Development",
-    github: "#",
-    demo: "#",
+    github: "",
+    demo: "",
     description:
       "Developing an interactive enterprise e-commerce workflow simulator that demonstrates how modern cloud-native applications operate in production. The platform visualizes customer request flows across API Gateway, microservices, Kubernetes, Kafka, Redis, PostgreSQL, and AWS infrastructure through real-time architecture diagrams, live logs, metrics, distributed tracing, and deployment workflows. Designed to showcase real-world system design, DevOps, observability, and cloud-native architecture.",
     tags: ["Next.js",
