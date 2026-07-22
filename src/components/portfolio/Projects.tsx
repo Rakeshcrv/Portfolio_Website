@@ -45,19 +45,22 @@ const projects = [
     ],
   },
   {
-    title: "CI/CD Pipeline — Three-Tier Application",
+    title: "CI/CD Pipeline — GMS Three-Tier Application",
     Icon: GitMerge,
     accent: "var(--violet)",
     status: "Completed",
     github: "https://github.com/Rakeshcrv/garbage-management-system",
     demo: null,
     description:
-      "Designed and implemented an automated CI/CD pipeline for a containerized three-tier application using Jenkins, Docker, Prometheus, and Grafana.",
-    tags: ["Jenkins", "Docker", "AWS", "Prometheus", "Grafana"],
+      "Built a cloud-native Garbage Management System to streamline complaint reporting, worker assignment, and resolution tracking. The project uses a modern DevOps workflow with Docker containerization, Jenkins-based CI/CD automation, AWS deployment, and observability through Prometheus and Grafana. It includes role-based workflows for citizens, admins, and workers, with image uploads, task tracking, and real-time monitoring.",
+    tags: ["Jenkins", "Docker", "AWS", "Prometheus", "Grafana","FastAPI","PostgresSQL"],
     highlights: [
-      "Automated builds",
-      "Containerized deployments",
-      "Observability dashboards",
+    "Role-based workflow for citizen, admin, and worker operations",
+    "Dockerized frontend, backend, database, and monitoring stack",
+    "Automated CI/CD pipeline using Jenkins and GitHub integration",
+    "AWS deployment with EC2, RDS, security groups, and Elastic IP",
+    "Prometheus and Grafana dashboards for system health and uptime",
+    "Complaint image upload, tracking, and resolution lifecycle management",
     ],
   },
   {
