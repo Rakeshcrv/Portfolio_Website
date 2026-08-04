@@ -73,7 +73,7 @@ jobs:
 
             echo "Running health check..."
 
-            curl --fail http://localhost:5173 >/dev/null
+            curl --fail http://localhost:8080 >/dev/null
 
             echo "========================================"
             echo "✅ Deployment Successful"
