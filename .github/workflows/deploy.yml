@@ -1,9 +1,13 @@
-name:  Deploy Portfolio to AWS EC2
+name: Deploy Portfolio to AWS EC2
 
 on:
   push:
     branches:
       - main
+
+concurrency:
+  group: portfolio-production
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -16,10 +20,12 @@ jobs:
 
       - name: Deploy to EC2 via SSH
         uses: appleboy/ssh-action@v1.2.2
+
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
+
           timeout: 60s
           command_timeout: 30m
 
@@ -27,43 +33,57 @@ jobs:
             set -e
 
             echo "========================================"
-            echo " Starting Portfolio Deployment"
+            echo "🚀 Portfolio Deployment Started"
             echo "========================================"
 
-            cd ~/Portfolio_Website
+            cd /home/ubuntu/Portfolio_Website
 
-            echo ""
-            echo " Current Directory:"
-            pwd
+            echo "Fetching latest code..."
 
-            echo ""
-            echo " Pulling latest code..."
-            git pull origin main
+            git fetch origin
+            git reset --hard origin/main
 
-            echo ""
-            echo " Installing dependencies..."
-            npm install
+            echo "Creating .env..."
 
-            echo ""
-            echo " Building application..."
+            cat > .env <<EOF
+            VITE_EMAILJS_SERVICE_ID=${{ secrets.VITE_EMAILJS_SERVICE_ID }}
+            VITE_EMAILJS_TEMPLATE_ID=${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
+            VITE_EMAILJS_PUBLIC_KEY=${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
+            EOF
+
+            echo "Installing dependencies..."
+
+            npm ci
+
+            echo "Building project..."
+
             npm run build
 
-            echo ""
-            echo " Reloading systemd..."
-            sudo systemctl daemon-reload
+            echo "Restarting service..."
 
-            echo ""
-            echo " Restarting portfolio service..."
             sudo systemctl restart portfolio
 
-            echo ""
-            echo " Waiting for service..."
+            echo "Waiting for service..."
+
             sleep 5
 
-            echo ""
-            echo " Checking service status..."
-            sudo systemctl is-active portfolio
+            echo "Checking service..."
 
-            echo ""
-            echo " Deployment Successful!"
-            echo "Website: https://rakeshsirvi.site"
+            sudo systemctl is-active --quiet portfolio
+
+            echo "Running health check..."
+
+            curl --fail http://localhost:5173 >/dev/null
+
+            echo "========================================"
+            echo "✅ Deployment Successful"
+            echo "========================================"
+
+            echo "Node Version:"
+            node -v
+
+            echo "NPM Version:"
+            npm -v
+
+            echo "Website:"
+            echo "https://rakeshsirvi.site"
