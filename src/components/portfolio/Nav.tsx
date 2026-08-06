@@ -47,7 +47,7 @@ export function Nav() {
               <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-[var(--cyan)] to-[var(--violet)] text-background">
                 <Terminal className="h-4 w-4" />
               </span>
-              <span className="hidden sm:inline">rakesh<span className="text-[var(--cyan)]">.dev</span></span>
+              <span className="hidden sm:inline">rakesh<span className="text-[var(--cyan)]">.site</span></span>
             </a>
             <ul className="hidden items-center gap-1 md:flex">
               {links.map((l) => (

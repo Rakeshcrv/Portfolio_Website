@@ -64,14 +64,14 @@ const projects = [
     ],
   },
   {
-    title: "FlowCommerce.AI",
+    title: "FlowCommerce",
     Icon: Cpu,
     accent: "#06b6d4",
     status: "Live",
     github: "https://github.com/Rakeshcrv/FlowCommerce.git",
     demo: "https://flowcommerce.rakeshsirvi.site",
     description:
-          "FlowCommerce.AI is a production-ready cloud-native e-commerce platform designed to showcase modern system architecture, DevOps workflows, and infrastructure observability. The platform features an interactive infrastructure visualizer that demonstrates how requests travel across API Gateway, microservices, PostgreSQL, Redis, Kafka, and cloud infrastructure through real-time animations, distributed tracing, service communication, deployment workflows, and live operational insights.",
+          "FlowCommerce is a production-ready cloud-native e-commerce platform designed to showcase modern system architecture, DevOps workflows, and infrastructure observability. The platform features an interactive infrastructure visualizer that demonstrates how requests travel across API Gateway, microservices, PostgreSQL, Redis, Kafka, and cloud infrastructure through real-time animations, distributed tracing, service communication, deployment workflows, and live operational insights.",
     tags: ["Next.js",
     "React",
     "Tailwind CSS",
